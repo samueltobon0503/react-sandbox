@@ -29,7 +29,7 @@ export const FoodDish = () => {
     return (
         <>
             <div className="foodish-container">
-                <h1>Componente consumo API</h1>
+                <h1>Componente consumo API Desde rama de Nico</h1>
                 {/* <input onChange={} value={category} type="text"/> */}
                 <button onClick={onButtonClick}>Refresh image</button>
                 <img src={data.image} className="image"/>
