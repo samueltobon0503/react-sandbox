@@ -29,6 +29,7 @@ const jobs = [
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    {/* <App></App> */}
     {/* <TodoListApp jobs={jobs}/> */}
     {/* <Example></Example> */}
     {/* <WindowResize></WindowResize> */}
