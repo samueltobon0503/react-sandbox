@@ -6,6 +6,8 @@ import App from './App';
 import { Example } from './components/Example';
 import { WindowResize } from './components/WindowResize';
 import { FoodDish } from './components/FoodDish';
+import { ReducerTodoApp } from './components/ReducerTodoApp';
+
 
 const jobs = [
   {
@@ -33,6 +35,7 @@ root.render(
     {/* <TodoListApp jobs={jobs}/> */}
     {/* <Example></Example> */}
     {/* <WindowResize></WindowResize> */}
-    <FoodDish></FoodDish>
+    {/* <FoodDish></FoodDish> */}
+    <ReducerTodoApp></ReducerTodoApp>
   </React.StrictMode>
 );
