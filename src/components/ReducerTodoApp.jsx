@@ -1,10 +1,11 @@
 import { useReducer, useState } from "react"
 import { todoReducer } from "../Reducer/todoReducer"
+import { todoTypes } from "../Types/todoTypes";
 
 const initState = [];
 export const ReducerTodoApp = () => {
 
-    const [todoState, distpatch] = useReducer(todoReducer, initState)
+    const [todoState, dispatch] = useReducer(todoReducer, initState)
     const [todoText, setTodoText] = useState("")
 
     const onInsertTodo = () => {
@@ -13,8 +14,16 @@ export const ReducerTodoApp = () => {
         const newTodo = {
             id: new Date().getMilliseconds(),
             text: todoText,
-            done: flase
+            done: false
         }
+
+        const action = {
+            type: todoTypes.add,
+            payload: newTodo
+        }
+
+        dispatch(action);
+        setTodoText("");
     }
 
     const onInputChange = (e) => {
@@ -22,32 +31,35 @@ export const ReducerTodoApp = () => {
         setTodoText(value);
     }
 
-    const action = {
-        type: todoTypes.add,
-        payload: newTodo
-    }
-
-    distpatch(action){
-        setTodoText("")
-    }
-
     return (
         <>
             <h1>Implementacion del Reducer</h1>
-            <input
-                value={todoText}
-                onChange={onInputChange}
-            />
-            <button
-                onClick={onInsertTodo}
-            >
-                New Task
-            </button>
 
+            <div class="input-group">
+                <input type="text"
+                    class="form-control"
+                    value={todoText}
+                    onChange={onInputChange} />
+                <span class="input-group-btn">
+                    <button
+                        class="btn btn-default"
+                        onClick={onInsertTodo}
+                        type="button">Insert To do</button>
+                </span>
+            </div>
 
+            <div className="container">
+                <ul class="list-group">
+
+                    {todoState.map((todo) => {
+                        return (
+                            <li key={todo.id} class="list-group-item"
+                            >{todo.text}</li>
+                        )
+                    })}
+                </ul>
+            </div>
         </>
     )
-
-
 }
 
