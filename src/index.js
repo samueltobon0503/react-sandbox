@@ -7,6 +7,9 @@ import { Example } from './components/Example';
 import { WindowResize } from './components/WindowResize';
 import { FoodDish } from './components/FoodDish';
 import { ReducerTodoApp } from './components/ReducerTodoApp';
+import { UserProvider } from './Context/UserProvider';
+import { LoginPage } from './components/loginPage';
+import { BrowserRouter } from 'react-router-dom';
 
 
 const jobs = [
@@ -36,6 +39,12 @@ root.render(
     {/* <Example></Example> */}
     {/* <WindowResize></WindowResize> */}
     {/* <FoodDish></FoodDish> */}
-    <ReducerTodoApp></ReducerTodoApp>
+    {/* <ReducerTodoApp></ReducerTodoApp> */}
+    <BrowserRouter>
+      <UserProvider>
+        <App></App>
+      </UserProvider>
+    </BrowserRouter>
+
   </React.StrictMode>
 );
