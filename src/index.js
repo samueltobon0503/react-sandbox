@@ -2,29 +2,32 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import TodoListApp from './components/TodoListApp';
-import App from './App';
 import { Example } from './components/Example';
 import { WindowResize } from './components/WindowResize';
 import { FoodDish } from './components/FoodDish';
 import { ReducerTodoApp } from './components/ReducerTodoApp';
+import { UserProvider } from './contexts/User.Provider';
+import { Loginpage } from './components/LoginPage';
+import { EventApp } from './EventApp';
+import { BrowserRouter } from 'react-router';
 
 
 const jobs = [
   {
-      name: "Make the bed",
-      minutes: "10"
+    name: "Make the bed",
+    minutes: "10"
   },
   {
-      name: "Have breakfast",
-      minutes: "10"
+    name: "Have breakfast",
+    minutes: "10"
   },
   {
-      name: "Take a shower",
-      minutes: "5"
+    name: "Take a shower",
+    minutes: "5"
   },
   {
-      name: "Get dress",
-      minutes: "15"
+    name: "Get dress",
+    minutes: "15"
   }
 ]
 
@@ -36,6 +39,11 @@ root.render(
     {/* <Example></Example> */}
     {/* <WindowResize></WindowResize> */}
     {/* <FoodDish></FoodDish> */}
-    <ReducerTodoApp></ReducerTodoApp>
+    {/* <ReducerTodoApp></ReducerTodoApp> */}
+    <BrowserRouter>
+      <UserProvider>
+        <EventApp></EventApp>
+      </UserProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );

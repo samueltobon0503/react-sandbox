@@ -1,23 +1,21 @@
-import logo from './logo.svg';
+import jhoel from './jhoelnew.png';
 import './App.css';
+import { useContext } from 'react';
+import { UserContext } from './contexts/User.Context';
+import { Route, Routes } from 'react-router';
+import { FoodDish } from './components/FoodDish';
 
 function App() {
+
+  const {user, setUser} = useContext(UserContext);
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <img src={jhoel} className="App-logo" alt="logo" />
       </header>
+      <pre>
+        {JSON.stringify(user)}
+      </pre>
     </div>
   );
 }
