@@ -13,7 +13,7 @@ export const Loginpage = () => {
             email: "toboncs@gmail.com"
         })
 
-        navigate('/');
+        navigate('/Home');
      }
 
     return(

@@ -1,4 +1,4 @@
-import jhoel from './jhoelnew.png';
+import jhoel from './assets/jhoelnew.png';
 import './App.css';
 import { useContext } from 'react';
 import { UserContext } from './contexts/User.Context';

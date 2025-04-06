@@ -8,7 +8,7 @@ import { FoodDish } from './components/FoodDish';
 import { ReducerTodoApp } from './components/ReducerTodoApp';
 import { UserProvider } from './contexts/User.Provider';
 import { Loginpage } from './components/LoginPage';
-import { EventApp } from './EventApp';
+import { EventApp } from './components/EventApp';
 import { BrowserRouter } from 'react-router';
 
 

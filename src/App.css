@@ -14,9 +14,9 @@
 }
 
 .App-header {
-  background-image: url('./rasputia.jpg'); /* Asegúrate de usar la ruta correcta */
-  background-size: cover; /* Hace que la imagen cubra todo el área */
-  background-position: center; /* Centra la imagen en la pantalla */
+  background-image: url('./assets/rasputia.jpg');
+  background-size: cover;
+  background-position: center;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
