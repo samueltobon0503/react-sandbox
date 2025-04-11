@@ -10,6 +10,7 @@ import { UserProvider } from './contexts/User.Provider';
 import { Loginpage } from './components/LoginPage';
 import { EventApp } from './components/EventApp';
 import { BrowserRouter } from 'react-router';
+import App from './App';
 
 
 const jobs = [
@@ -34,7 +35,7 @@ const jobs = [
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <App></App> */}
+    <App></App>
     {/* <TodoListApp jobs={jobs}/> */}
     {/* <Example></Example> */}
     {/* <WindowResize></WindowResize> */}
