@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react"
-import { UserContext } from "../contexts/User.Context"
+import { UserContext } from "../auth/contexts/User.Context"
 
 export const HomePage = () =>{
 

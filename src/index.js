@@ -6,12 +6,17 @@ import { Example } from './components/Example';
 import { WindowResize } from './components/WindowResize';
 import { FoodDish } from './components/FoodDish';
 import { ReducerTodoApp } from './components/ReducerTodoApp';
-import { UserProvider } from './contexts/User.Provider';
-import { Loginpage } from './components/LoginPage';
+import { UserProvider } from './auth/contexts/User.Provider';
+import { Loginpage } from './auth/pages/LoginPage';
 import { EventApp } from './components/EventApp';
 import { BrowserRouter } from 'react-router';
 import App from './App';
+import { PrimeReactProvider } from 'primereact/api';
 
+import 'primereact/resources/themes/lara-light-blue/theme.css';
+import 'primereact/resources/primereact.min.css';  
+import 'primeicons/primeicons.css'; 
+import 'primeflex/primeflex.css';
 
 const jobs = [
   {
@@ -35,16 +40,18 @@ const jobs = [
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App></App>
+    {/* <App></App> */}
     {/* <TodoListApp jobs={jobs}/> */}
     {/* <Example></Example> */}
     {/* <WindowResize></WindowResize> */}
     {/* <FoodDish></FoodDish> */}
     {/* <ReducerTodoApp></ReducerTodoApp> */}
+    <PrimeReactProvider>
     <BrowserRouter>
       <UserProvider>
         <EventApp></EventApp>
       </UserProvider>
     </BrowserRouter>
+    </PrimeReactProvider>
   </React.StrictMode>
 );
