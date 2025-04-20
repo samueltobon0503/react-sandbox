@@ -1,8 +1,6 @@
 import { useContext } from "react"
 import { UserContext } from "../contexts/User.Context";
 import { useNavigate } from "react-router";
-import { Button } from 'primereact/button';
-import { Card } from 'primereact/card';
 
 export const Loginpage = () => {
 
@@ -21,11 +19,8 @@ export const Loginpage = () => {
     return(
         <>
         <div className="flex justify-content-center align-items-center h-screen ">
-            <Card title="Login Page"  className="bg-teal-500 flex flex-column align-items-center"
-              style={{ width: 'auto', padding: '2rem' }}>
                 <pre>{ JSON.stringify(user, null, 3)}</pre>
-                <Button icon="pi pi-check" onClick={ onLogin }>Hacer Login</Button>
-            </Card>
+                <button  onClick={ onLogin }>Hacer Login</button>
         </div>
         </>
     )
