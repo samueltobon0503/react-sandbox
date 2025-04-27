@@ -11,7 +11,6 @@ import { Loginpage } from './auth/pages/LoginPage';
 import { EventApp } from './components/EventApp';
 import { BrowserRouter } from 'react-router';
 import App from './App';
-import { PrimeReactProvider } from 'primereact/api';
 
 const jobs = [
   {
