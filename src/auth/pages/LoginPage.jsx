@@ -1,32 +1,73 @@
-import { useContext } from "react"
+import { useContext } from "react";
+import { useForm } from "../../hooks/useForm";
 import { UserContext } from "../contexts/User.Context";
 import { useNavigate } from "react-router";
-import { Button } from 'primereact/button';
-import { Card } from 'primereact/card';
 
-export const Loginpage = () => {
 
-    const {user, setUser} = useContext(UserContext);
+const initialForm = {
+    email: "",
+    password: "",
+};
+
+export const LoginPage = () => {
     const navigate = useNavigate();
+    const { login } = useContext(UserContext);
+    const { email, password, onInputChange } = useForm(initialForm);
 
-     const onLogin = () => {
-        setUser({
-            name: "Samuel",
-            email: "toboncs@gmail.com"
-        })
+    const onLoginUser = (target) => {
+        login({ email, password })
 
-        navigate('/Home');
-     }
+        navigate('/', { replace: true })
+    }
 
-    return(
+    return (
         <>
-        <div className="flex justify-content-center align-items-center h-screen ">
-            <Card title="Login Page"  className="bg-teal-500 flex flex-column align-items-center"
-              style={{ width: 'auto', padding: '2rem' }}>
-                <pre>{ JSON.stringify(user, null, 3)}</pre>
-                <Button icon="pi pi-check" onClick={ onLogin }>Hacer Login</Button>
-            </Card>
-        </div>
+            <div className="container vh-100 justify-content-center align-items-center">
+                <div className="row w-100">
+                    <div className="col-md-3"></div>
+                    <div className="col-md-6 mx-auto">
+                        <div className="card-body">
+                            <h4 className="card-title text-center"> Login Page </h4>
+
+                            <div className="form-group">
+                                <label> Email </label>
+                                <input
+                                    type="email"
+                                    className="form-control"
+                                    id="email"
+                                    name="email"
+                                    value={email}
+                                    onChange={onInputChange}
+                                    placeholder="Enter user email"
+                                />
+                            </div>
+                            <div className="form-group">
+                                <label> Password </label>
+                                <input
+                                    type="password"
+                                    className="form-control"
+                                    id="password"
+                                    name="password"
+                                    value={password}
+                                    onChange={onInputChange}
+                                    placeholder="Enter password"
+                                />
+                            </div>
+
+                            <div className="form-group">
+                                <button
+                                    type="submit"
+                                    className="btn btn-primary btn-lg btn-block"
+                                    onClick={onLoginUser}
+                                >
+                                    Login
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-md-3"></div>
+                </div>
+            </div>
         </>
-    )
-}
+    );
+};

@@ -6,6 +6,7 @@ import { AppRoutes } from '../routes/AppRoutes';
 export const EventApp = () => {
 
   const {user, setUser} = useContext(UserContext);
+
   return (
       <UserProvider>
         <AppRoutes></AppRoutes>
