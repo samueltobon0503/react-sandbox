@@ -11,12 +11,6 @@ import { Loginpage } from './auth/pages/LoginPage';
 import { EventApp } from './components/EventApp';
 import { BrowserRouter } from 'react-router';
 import App from './App';
-import { PrimeReactProvider } from 'primereact/api';
-
-import 'primereact/resources/themes/lara-light-blue/theme.css';
-import 'primereact/resources/primereact.min.css';  
-import 'primeicons/primeicons.css'; 
-import 'primeflex/primeflex.css';
 
 const jobs = [
   {
@@ -46,12 +40,10 @@ root.render(
     {/* <WindowResize></WindowResize> */}
     {/* <FoodDish></FoodDish> */}
     {/* <ReducerTodoApp></ReducerTodoApp> */}
-    <PrimeReactProvider>
     <BrowserRouter>
       <UserProvider>
         <EventApp></EventApp>
       </UserProvider>
     </BrowserRouter>
-    </PrimeReactProvider>
   </React.StrictMode>
 );
